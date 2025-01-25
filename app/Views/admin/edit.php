@@ -8,20 +8,20 @@
       <?php endforeach ?>
     <?php endif ?>
   </div>
-  <h1>Edit News</h1>
+  <h1>Edit Berita</h1>
   <form action="/admin/update/<?= esc($news_item['id']) ?>" method="post">
     <?= csrf_field() ?>
     <input type="hidden" name="id" value="<?= esc($news_item['id']) ?>">
     <div class="mb-3">
-      <label for="title" class="form-label">Title</label>
-      <input type="input" name="title" class="form-control" id="title" placeholder="Title"
+      <label for="title" class="form-label">Judul</label>
+      <input type="input" name="title" class="form-control" id="title" placeholder="Judul"
         value="<?= esc($news_item['title']) ?>">
     </div>
     <div class="mb-3">
-      <label for="content" class="form-label">Content</label>
+      <label for="content" class="form-label">Konten</label>
       <textarea name="content" cols="45" rows="4" class="form-control" id="content"
-        placeholder="Content"><?= esc($news_item['content']) ?></textarea>
+        placeholder="Konten"><?= esc($news_item['content']) ?></textarea>
     </div>
-    <button type="submit" class="btn btn-primary">Update</button>
+    <button type="submit" class="btn btn-primary">Edit</button>
   </form>
 </div>

@@ -20,7 +20,7 @@ class Pages extends BaseController
     public function createPage()
     {
 
-        return view('templates/header', ['title' => 'Tambah Berita'])
+        return view('templates/adminHeader', ['title' => 'Tambah Berita'])
             . view('news/create')
             . view('templates/footer');
     }

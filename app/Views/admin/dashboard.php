@@ -12,9 +12,9 @@
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">Title</th>
-        <th scope="col">Content</th>
-        <th scope="col">Action</th>
+        <th scope="col">Judul</th>
+        <th scope="col">Konten</th>
+        <th scope="col">Aksi</th>
       </tr>
     </thead>
     <tbody>

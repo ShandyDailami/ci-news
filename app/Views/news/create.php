@@ -8,18 +8,18 @@
       <?php endforeach ?>
     <?php endif ?>
   </div>
-  <h1>Create News</h1>
+  <h1>Buat Berita</h1>
   <form action="/news/create" method="post">
     <?= csrf_field() ?>
     <div class="mb-3">
-      <label for="title" class="form-label">Title</label>
-      <input type="input" name="title" class="form-control" id="title" placeholder="Title" value="<?= old('title') ?>">
+      <label for="title" class="form-label">Judul</label>
+      <input type="input" name="title" class="form-control" id="title" placeholder="Judul" value="<?= old('title') ?>">
     </div>
     <div class="mb-3">
-      <label for="content" class="form-label">Content</label>
+      <label for="content" class="form-label">Konten</label>
       <textarea name="content" cols="45" rows="4" class="form-control" id="content"
-        placeholder="Content"><?= old('content') ?></textarea>
+        placeholder="Konten"><?= old('content') ?></textarea>
     </div>
-    <button type="submit" name="submit" class="btn btn-primary">Create</button>
+    <button type="submit" name="submit" class="btn btn-primary">Buat</button>
   </form>
 </div>
