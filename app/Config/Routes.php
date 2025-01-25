@@ -11,4 +11,8 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', [Pages::class, 'index']);
 $routes->get('/admin', [Admin::class, 'index']);
 $routes->get('/new', [Pages::class, 'createPage']);
-$routes->post('/', [Pages::class, 'create']);
+$routes->post('/news/create', [Pages::class, 'create']);
+
+$routes->get('/admin/edit/(:num)', [Pages::class, 'edit']);
+$routes->post('/admin/update/(:num)', [Pages::class, 'update']);
+$routes->get('/admin/delete/(:num)', [Pages::class, 'delete']);

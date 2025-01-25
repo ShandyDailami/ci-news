@@ -8,3 +8,19 @@
   -webkit-box-shadow: 0px 6px 5px -2px rgba(0, 0, 0, .1);
   -moz-box-shadow: 0px 6px 5px -2px rgba(0, 0, 0, .1);
 }
+
+.flash-message {
+  transform: translateY(-20px);
+  transition: .5s ease, opacity .5s ease;
+  opacity: 0;
+}
+
+.flash-message.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.flash-message.hide {
+  transform: translateY(-20px);
+  opacity: 0;
+}

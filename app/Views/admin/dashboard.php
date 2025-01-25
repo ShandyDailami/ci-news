@@ -17,6 +17,14 @@
             <th scope="row"><?= $index + 1 ?></th>
             <td><?= esc($news_item['title']) ?></td>
             <td><?= esc($news_item['content']) ?></td>
+            <td colspan="2">
+              <a href="/admin/edit/<?= esc($news_item['id']) ?>" class="text-decoration-none btn btn-outline-primary">
+                <i class="bi bi-pencil-square"></i>
+              </a>
+              <a href="/admin/delete/<?= esc($news_item['id']) ?>" class="text-decoration-none btn btn-outline-danger">
+                <i class="bi bi-trash"></i>
+              </a>
+            </td>
           </tr>
         <?php endforeach ?>
       <?php else: ?>
