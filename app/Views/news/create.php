@@ -22,12 +22,4 @@
     </div>
     <button type="submit" name="submit" class="btn btn-primary">Create</button>
   </form>
-  <!-- <div class="position-fixed top-0 end-0 d-flex flex-column" style="z-index: 1050;">
-    <div class="alert alert-danger">
-      test
-    </div>
-    <div class="alert alert-danger">
-      test
-    </div>
-  </div> -->
 </div>

@@ -13,10 +13,10 @@
 
 <body>
   <nav class="navbar bg-body-tertiary">
-    <div class="container-fluid px-5">
+    <div class="container">
       <a class="navbar-brand" href="/">
         <img src="<?php echo base_url(); ?>/assets/logo dark.png" alt="News" width="50px">
       </a>
-      <a href="/admin" class="text-body-secondary text-decoration-none">Admin</a>
+      <a href="/" class="text-body-secondary text-decoration-none">Beranda</a>
     </div>
   </nav>

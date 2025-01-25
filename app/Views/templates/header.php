@@ -17,5 +17,6 @@
       <a class="navbar-brand" href="/">
         <img src="<?php echo base_url(); ?>/assets/logo dark.png" alt="News" width="50px">
       </a>
+      <a href="/admin" class="text-body-secondary text-decoration-none">Aku adalah admin</a>
     </div>
   </nav>

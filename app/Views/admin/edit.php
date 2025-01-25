@@ -1,17 +1,17 @@
-<?php if (session()->getFlashdata('errors')): ?>
-  <div class="alert alert-danger">
-    <ul>
-      <?php foreach (session()->getFlashdata('errors') as $error): ?>
-        <li><?= esc($error) ?></li>
-      <?php endforeach; ?>
-    </ul>
-  </div>
-<?php endif; ?>
-
 <div class="container">
+  <div class="position-fixed mt-2 me-2 top-0 end-0 d-flex flex-column">
+    <?php if (session()->getFlashdata('errors')): ?>
+      <?php foreach (session()->getFlashdata('errors') as $error): ?>
+        <div class="alert alert-danger flash-message">
+          <?= esc($error) ?>
+        </div>
+      <?php endforeach ?>
+    <?php endif ?>
+  </div>
   <h1>Edit News</h1>
   <form action="/admin/update/<?= esc($news_item['id']) ?>" method="post">
     <?= csrf_field() ?>
+    <input type="hidden" name="id" value="<?= esc($news_item['id']) ?>">
     <div class="mb-3">
       <label for="title" class="form-label">Title</label>
       <input type="input" name="title" class="form-control" id="title" placeholder="Title"

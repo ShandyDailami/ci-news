@@ -12,3 +12,19 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   }, 5000);
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const deleteButtons = document.querySelectorAll('[data-bs-target="#delete"]');
+  const confirmButton = document.getElementById('confirmDelete');
+  let selectedId = null;
+
+  deleteButtons.forEach((button) => {
+    button.addEventListener('click', (event) => {
+      selectedId = button.dataset.id;
+    });
+  });
+
+  confirmButton.addEventListener('click', () => {
+    window.location.href = '/admin/delete/' + selectedId;
+  })
+});

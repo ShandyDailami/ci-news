@@ -32,10 +32,25 @@ class Pages extends BaseController
         $data = $this->request->getPost(['title', 'content']);
         if (
             !$this->validateData($data, [
-                'title' => 'required|max_length[255]|min_length[3]',
-                'content' => 'required|max_length[5000]|min_length[10]'
+                'title' => [
+                    'rules' => 'required|max_length[255]|min_length[3]',
+                    'errors' => [
+                        'required' => 'Judul harus diisi',
+                        'max_length' => 'Judul tidak boleh lebih dari 255 karakter',
+                        'min_length' => 'Judul harus memiliki 3 karakter',
+                    ]
+                ],
+                'content' => [
+                    'rules' => 'required|max_length[5000]|min_length[10]',
+                    'errors' => [
+                        'required' => 'Konten harus diisi',
+                        'max_length' => 'Konten tidak boleh lebih dari 5000 karakter',
+                        'min_length' => 'Konten harus memiliki 10 karakter',
+                    ]
+                ],
             ])
         ) {
+
             return redirect()->to('/new')->withInput()->with('errors', $this->validator->getErrors());
         }
         $model = new News();
@@ -68,17 +83,27 @@ class Pages extends BaseController
         helper(['form', 'url']);
         $data = $this->request->getPost(['title', 'content']);
         if (
-            !$this->validate([
-                'title' => 'required|max_length[255]|min_length[3]',
-                'content' => 'required|max_length[5000]|min_length[10]',
+            !$this->validateData($data, [
+                'title' => [
+                    'rules' => 'required|max_length[255]|min_length[3]',
+                    'errors' => [
+                        'required' => 'Judul harus diisi',
+                        'max_length' => 'Judul tidak boleh lebih dari 255 karakter',
+                        'min_length' => 'Judul harus memiliki 3 karakter',
+                    ]
+                ],
+                'content' => [
+                    'rules' => 'required|max_length[5000]|min_length[10]',
+                    'errors' => [
+                        'required' => 'Konten harus diisi',
+                        'max_length' => 'Konten tidak boleh lebih dari 5000 karakter',
+                        'min_length' => 'Konten harus memiliki 10 karakter',
+                    ]
+                ],
             ])
         ) {
-            return view('templates/header', ['title' => 'Edit Berita'])
-                . view('admin/edit', [
-                    'post' => $data,
-                    'validation' => $this->validator
-                ])
-                . view('templates/footer');
+            $id = $this->request->getPost('id');
+            return redirect()->to('/admin/edit/' . $id)->withInput()->with('errors', $this->validator->getErrors());
         }
         $model = new News();
         $model->update($id, [
